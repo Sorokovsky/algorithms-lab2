@@ -7,11 +7,11 @@ def process_array(array: list) -> list:
     for i in range(len(array)):
         item = array[i]
         if item <= 0:
-            result.append(array[i])
             if len(sequence) > 0:
                 for item_in_sequence in sequence[::-1]:
                     result.append(item_in_sequence)
             sequence = []
+            result.append(array[i])
         else:
             sequence.append(item)
     return result
